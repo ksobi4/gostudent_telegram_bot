@@ -33,7 +33,7 @@ app.get('/call', (req, res) => {
 
 initTelegram()
 setInterval(check, 5*60*1000) //check updates on gostudent
-//setInterval(callYourself, 1*60*1000)
+setInterval(callYourself, 1*60*1000)
 
 
 

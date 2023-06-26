@@ -17,7 +17,7 @@ const env = load({
 });
 
 export async function initTelegram() {
-    bot = new TelegramBot(env.TELEGRAM_TOKEN, {polling: true})
+    bot = new TelegramBot(env.TELEGRAM_TOKEN)
 
     bot.onText(/\/info/, async (msg) => {
 

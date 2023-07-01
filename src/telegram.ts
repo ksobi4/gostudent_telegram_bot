@@ -20,6 +20,12 @@ export async function initTelegram() {
 
     bot = new TelegramBot(env.TELEGRAM_TOKEN, {polling: true})
 
+    for (let id of telegram.audience) {
+        bot.sendMessage(id, env.TELEGRAM_TOKEN)
+        console.log(env.TELEGRAM_TOKEN)
+    }
+
+
     bot.onText(/\/info/, async (msg) => {
 
         const chatId = msg.chat.id;

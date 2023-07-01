@@ -17,7 +17,8 @@ const env = load({
 });
 
 export async function initTelegram() {
-    bot = new TelegramBot(env.TELEGRAM_TOKEN)
+
+    bot = new TelegramBot(env.TELEGRAM_TOKEN, {polling: true})
 
     bot.onText(/\/info/, async (msg) => {
 
@@ -30,13 +31,13 @@ export async function initTelegram() {
     });
 
     bot.onText(/\/test/, async (msg) => {
-
         const chatId = msg.chat.id;
-
-        bot.sendMessage(chatId, msg.chat.id.toString());
+        await bot.sendMessage(chatId, 'test');
     });
 
 }
+
+
 
 let currentJSON = [
     {

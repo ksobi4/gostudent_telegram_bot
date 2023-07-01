@@ -8,5 +8,5 @@ const env = load({
 });
 
 export async function callYourself() {
-    await axios.get(`${env.BASE_URL}/call`)
+    await axios.get(`${env.BASE_URL}:${env.PORT}/call`)
 }
